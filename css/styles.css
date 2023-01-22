@@ -83,6 +83,12 @@ header{
     padding-bottom: var(--card-set-gap);
 }
 
+@media screen and (max-width: 767px) {
+    .logo {
+        margin-right: auto;
+    }
+}
+
 .logo-span {
     color: var(--brand-color);
 }
@@ -102,8 +108,49 @@ header>div {
     margin-left: auto;
 }
 
+@media screen and (max-width: 767px) {
+    .header-list {
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .header-list {
+        margin-right: 118px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .header-list {
+        margin-right: 332px;
+    }
+
+}
+
 .header-list .item:not(:last-child) {
     margin-right: 40px;
+}
+
+.header-list-contact {
+    display: flex;
+    list-style-type: none;
+    margin-left: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .header-list-contact {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .header-list-contact {
+        flex-direction: column;
+    }
+
 }
 
 .nav-link {
@@ -147,8 +194,18 @@ header>div {
     border-radius: 2px;
 }
 
-.main-contact:not(:last-child) {
-    margin-right: 40px;
+@media screen and (min-width: 1200px) {
+    .main-contact:not(:last-child) {
+        margin-right: 40px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .main-contact:not(:last-child) {
+        margin-bottom: 4px;
+    }
+
 }
 
 .contact {
@@ -167,10 +224,36 @@ header>div {
     transition-timing-function: var(--transition-function);
 }
 
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .contact {
+        padding: 0;
+    }
+
+}
+
 .contact:hover,
 .contact:focus {
     color: var(--brand-color);
 }
+
+/* Mobile-Menu */
+
+.mobile-menu-open {
+    margin-left: auto;
+    padding: 0;
+
+    background-color: transparent;
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-menu-open {
+        display: none;
+    }
+    
+}
+
+
 
 /* MAIN */
 
@@ -580,6 +663,13 @@ header>div {
     
 }
 
+@media screen and (min-width: 1200px) {
+    .conteiner-cust {
+        flex-direction: column;
+    }
+    
+}
+
 .customers-title {
     font-weight: 600;
     font-size: 36px;
@@ -679,6 +769,13 @@ footer {
     .logo-container {
         max-width: 552px;
         margin: 0 auto;
+    }
+    
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .logo-container {
+        margin-bottom: 112px;
     }
     
 }
@@ -948,6 +1045,14 @@ footer {
     transition-property: transform;
     transition-duration: var(--transition-time);
     transition-timing-function: var(--transition-function);
+}
+
+@media screen and (max-width: 767px) {
+    .modal {
+        min-width: 392px;
+        padding: 16px;
+    }
+    
 }
 
 .icon-close {
@@ -1350,3 +1455,179 @@ footer {
     margin-top: 8px;
 }
 
+/* Mobile menu */
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+
+    padding: 80px 40px 40px 40px;
+    list-style: none;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--bgrd-color);
+    z-index: 999;
+
+    transform: translateX(100%);
+
+    transition-property: transform;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+@media (min-width: 767px) {
+    .menu-container {
+        display: none;
+    }
+}
+
+.menu-container.is-open {
+    transform: translateX(0);
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    transition-property: background, border;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+
+}
+
+.menu-toggle>svg {
+    fill: #000000;
+
+    transition-property: fill;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+.menu-toggle:active,
+.menu-toggle:hover {
+    background: #404BBF;
+    border: 1px solid #404BBF;
+}
+
+.menu-toggle:active,
+.menu-toggle:hover>svg {
+    fill: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+}
+
+.mobile-menu {
+    margin-bottom: auto;
+    list-style: none;
+}
+
+.mobile-menu-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.mobile-menu-link {
+    display: block;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    text-decoration: none;
+    color: var(--main-text-color);
+       
+    transition-property: color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+    color: var(--brand-color);
+}
+
+.menu-current-page {
+    color: var(--brand-color);
+}
+
+.menu-header-list {
+    display: block;
+    list-style: none;
+
+    margin-bottom: 48px;
+}
+
+.mobile-contact:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.menu-contact {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--descr-text-color);
+    text-decoration: none;
+
+    transition-property: color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+.menu-contact:hover,
+.menu-contact:focus {
+    color: var(--brand-color);
+}
+
+.menu-contact-main {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.11;
+    color: var(--brand-color);
+}
+
+.icon-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--brand-color);
+    
+    border-radius: 50%;
+    color: var(--bgrd-color);
+    width: 40px;
+    height: 40px;
+
+    transition-property: background-color;
+    transition-duration: var(--transition-time);
+    transition-timing-function: var(--transition-function);
+}
+
+.icon-list-menu {
+    display: flex;
+    list-style-type: none;
+}
+
+.icon-list-menu>li:not(:last-child) {
+    margin-right: 56px;
+}
+
+.icon-menu:hover,
+.icon-menu:focus {
+    background-color: #31D0AA;
+}
