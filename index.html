@@ -46,7 +46,7 @@
         <section class="hero">
             <div class="container">
                 <h1 class="hero-title">Effective Solutions for Your Business</h1>
-                <button type="button" class="hero-btn" data-modal-open>Order Service</button>
+                <button type="button" class="hero-btn" data-modal-open aria-expanded="false" aria-controls="modal">Order Service</button>
             </div>
             
         </section>
@@ -397,7 +397,7 @@
         
     </footer>
 
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop is-hidden" data-modal id="modal">
         <div class="modal">
                 <button type="button" class="icon-close" data-modal-close>
                     <svg width="8px" height="8px">
@@ -503,7 +503,13 @@
 
     </div>
 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+        integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+        crossorigin="anonymous">
+    </script>
+
     <script src="./js/modal.js"></script>
+
     <script src="./js/mobile-menu.js"></script>
 
     
